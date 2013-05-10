@@ -1,6 +1,6 @@
 ## Color Conversion
 
-This gem provides conversions for colors to and from Hex, RGB, CMYK, and HSV. 
+This gem provides conversions for colors to and from Hex, RGB, and HSV. 
 
 _This gem is in an extremely experimental state right now_
 
