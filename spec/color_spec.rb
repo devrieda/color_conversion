@@ -2,77 +2,80 @@ require 'spec_helper'
 
 describe Color do 
   
-  describe ".new" do 
-    
-    it "should initialize color by rgb hash" do 
-      color = Color.new(r: 255, g: 255, b: 255)
-    end
-    
-    it "should initialize color by rgba hash" do 
-      color = Color.new(r: 255, g: 255, b: 255, a: 0.5)
-    end
-
-    it "should initialize color by hsl hash" do 
-      color = Color.new(h: 0, s: 100, l: 100)
-    end
-
-    it "should initialize color by hsla hash" do 
-      color = Color.new(h: 0, s: 100, l: 100, a: 0.5)
-    end
+  describe ".new with color string" do 
 
     it "should initialize color by lower hex" do 
-      color = Color.new("#ffffff")
-    end
-
-    it "should initialize color by hex without hash" do 
-      color = Color.new("FFFFFF")
+      color = Color.new("#3366cc")
+      expect(color.rgb).to eq(r: 51, g: 102, b: 204)
     end
 
     it "should initialize color by hex with hash" do 
-      color = Color.new("#FFFFFF")
+      color = Color.new("#3366CC")
+      expect(color.rgb).to eq(r: 51, g: 102, b: 204)
     end
 
     it "should initialize color by short hex" do 
-      color = Color.new("#C3C")
+      color = Color.new("#36C")
+      expect(color.rgb).to eq(r: 51, g: 102, b: 204)
     end
 
     it "should initialize color by rgb string" do 
-      color = Color.new("rgb(255,255,255)")
-    end
-
-    it "should initialize color by rgb string with spaces" do 
-      color = Color.new("rgb( 255, 255, 255 )")
+      color = Color.new("rgb(51, 102, 204)")
     end
 
     it "should initialize color by rgba string" do 
-      color = Color.new("rgba(255,255,255,0.2)")
-    end
-
-    it "should initialize color by rgba string with spaces" do 
-      color = Color.new("rgba(255, 255, 255, 0.2)")
+      color = Color.new("rgba(51, 102, 204, 0.2)")
     end
 
     it "should initialize color by hsl string" do 
-      color = Color.new("hsl(0,100%,100%)")
-    end
-
-    it "should initialize color by hsl string with spaces" do 
-      color = Color.new("hsl(0, 100%, 100%)")
+      color = Color.new("hsl(225, 73%, 57%)")
     end
 
     it "should initialize color by hsla string" do 
-      color = Color.new("hsla(0,100%,100%,0.5)")
-      
-    end
-
-    it "should initialize color by hsla string with spaces" do 
-      color = Color.new("hsla(0, 100%, 100%, 0.5)")
+      color = Color.new("hsla(225, 73%, 57%, 0.5)")      
     end
     
     it "should initialize color by textual string" do 
-      color = Color.new("white")
+      color = Color.new("royalblue")
     end
 
+    it "should initialize color by textual string case" do 
+      color = Color.new("RoyalBlue")
+    end
   end
 
+
+  describe ".new" do 
+    it "should initialize color by rgb" do 
+      color = Color.new(r: 51, g: 102, b: 204)
+    end
+
+    it "should initialize color by rgba" do 
+      color = Color.new(r: 51, g: 102, b: 204, a: 0.5)
+    end
+
+    it "should initialize color by hsl" do 
+      color = Color.new(h: 225, s: 73, l: 57)
+    end
+
+    it "should initialize color by hsla" do 
+      color = Color.new(h: 225, s: 73, l: 57, a: 0.5)
+    end
+    
+    it "should initialize color by hsv" do 
+      color = Color.new(h: 220, s: 75, v: 80)
+    end
+
+    it "should initialize color by hsb" do 
+      color = Color.new(h: 220, s: 75, v: 80)
+    end
+
+    it "should initialize color by cmyk" do 
+      color = Color.new(c: 87, m: 69, y: 13, k: 1)
+    end
+
+    it "should initialize color by lab" do 
+      color = Color.new(l: 44, a: 11, b: -59)
+    end
+  end
 end
