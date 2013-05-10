@@ -1,6 +1,6 @@
 ## Color Conversion
 
-This gem provides conversions for colors to and from Hex, RGB, and HSV. 
+This gem provides conversions for colors to and from Hex, RGB, and HSL. 
 
 _This gem is in an extremely experimental state right now_
 
@@ -10,18 +10,22 @@ Create a new color:
 ```ruby
 # from hex
 color = Color.new("#FFFFFF")
+color = Color.new("#FFF")
 
-# from rgb
+# from rgb and rgba
 color = Color.new(r: 255, g: 255, b: 255)
+color = Color.new(r: 255, g: 255, b: 255, a: 0.5)
 
-# from hsv
-color = Color.new(h: 0.0, s: 0.0, v: 1.0)
+# from hsl and hsla
+color = Color.new(h: 0, s: 100, l: 100)
+color = Color.new(h: 0, s: 100, l: 100, a: 0.5)
 
 # from textual color
 color = Color.new("white")
 
 # from a css declaration
 color = Color.new("rgb(255,255,255)")
+color = Color.new("hsl(0,100%,100%)")
 ```
 
 
@@ -37,10 +41,10 @@ Color.new("white").hex
 => "#FFFFFF"
 ```
 
-Convert to HSV
+Convert to HSL
 ```ruby
-Color.new("white").hsv
-=> {:h=>0.0, :s=>0.0, :v=>1.0}
+Color.new("white").hsl
+=> {:h=>0, :s=>100, :l=>100}
 ```
 
 Convert to Textual
