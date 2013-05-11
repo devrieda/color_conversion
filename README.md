@@ -47,9 +47,9 @@ Color.new("white").hsl
 => {:h=>0, :s=>100, :l=>100}
 ```
 
-Convert to Textual
+Convert to Name
 ```ruby
-Color.new("#FFFFFF").text
+Color.new("#FFFFFF").name
 => "white"
 ```
 
