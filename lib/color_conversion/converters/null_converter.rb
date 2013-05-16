@@ -1,7 +1,7 @@
 module ColorConversion
   class NullConverter < ColorConverter
 
-    def self.matches?(args)
+    def self.matches?(color)
       true
     end
 
