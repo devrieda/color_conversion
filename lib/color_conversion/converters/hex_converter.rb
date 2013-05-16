@@ -2,7 +2,9 @@ module ColorConversion
   class HexConverter < ColorConverter
 
     def self.matches?(color)
-      color.to_s.include?("#")
+      return false unless color.kind_of?(String)
+
+      color.include?("#") && [4, 7].include?(color.length)
     end
 
     private
