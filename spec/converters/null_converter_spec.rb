@@ -7,4 +7,9 @@ describe NullConverter do
       expect(NullConverter.matches?(r: 51, g: 102, b: 204)).to be_true
     end
   end
+  
+  describe ".rgb" do 
+    it "should throw an error" do 
+    end
+  end
 end

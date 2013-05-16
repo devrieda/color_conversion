@@ -14,4 +14,9 @@ describe RgbStringConverter do
       expect(RgbStringConverter.matches?(r: 51, g: 102, b: 204)).to be_false
     end
   end
+  
+  describe ".rgb" do 
+    it "should convert to rgb" do 
+    end
+  end
 end

@@ -22,4 +22,12 @@ describe HexConverter do
       expect(HexConverter.matches?(h: 225, s: 73, l: 57)).to be_false
     end
   end
+
+  describe ".rgb" do 
+    it "should convert to rgb" do 
+      color = HexConverter.new("#3366cc")
+      rgb   = {r: 51, g: 102, b: 204}
+      expect(color.rgb).to eq rgb
+    end
+  end
 end

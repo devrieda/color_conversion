@@ -14,4 +14,9 @@ describe LabConverter do
       expect(LabConverter.matches?("#ffffff")).to be_false
     end
   end
+  
+  describe ".rgb" do 
+    it "should convert to rgb" do 
+    end
+  end
 end

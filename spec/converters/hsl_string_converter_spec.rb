@@ -14,4 +14,9 @@ describe HslStringConverter do
       expect(HslStringConverter.matches?(h: 225, s: 73, l: 57)).to be_false
     end
   end
+  
+  describe ".rgb" do 
+    it "should convert to rgb" do 
+    end
+  end
 end

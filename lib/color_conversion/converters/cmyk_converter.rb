@@ -11,17 +11,16 @@ module ColorConversion
     private
 
     def to_rgb(cmyk)
-      # var c = cmyk[0] / 100,
-      #     m = cmyk[1] / 100,
-      #     y = cmyk[2] / 100,
-      #     k = cmyk[3] / 100,
-      #     r, g, b;
-      # 
-      # r = 1 - Math.min(1, c * (1 - k) + k);
-      # g = 1 - Math.min(1, m * (1 - k) + k);
-      # b = 1 - Math.min(1, y * (1 - k) + k);
-      # [r * 255, g * 255, b * 255];
-      {}
+      c = cmyk[:c].to_f / 100.0
+      m = cmyk[:m].to_f / 100.0
+      y = cmyk[:y].to_f / 100.0
+      k = cmyk[:k].to_f / 100.0
+
+      r = (255 * (1.0 - [1.0, c * (1.0 - k) + k].min)).round
+      g = (255 * (1.0 - [1.0, m * (1.0 - k) + k].min)).round
+      b = (255 * (1.0 - [1.0, y * (1.0 - k) + k].min)).round
+
+      {r: r, g: g, b: b}
     end
   end
 end

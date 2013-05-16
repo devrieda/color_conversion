@@ -14,4 +14,12 @@ describe CmykConverter do
       expect(CmykConverter.matches?("#ffffff")).to be_false
     end
   end
+  
+  describe ".rgb" do 
+    it "should convert to rgb" do 
+      color = CmykConverter.new(c: 74, m: 58, y: 22, k: 3)
+      rgb   = {r: 64, g: 104, b: 193}
+      expect(color.rgb).to eq rgb
+    end
+  end
 end

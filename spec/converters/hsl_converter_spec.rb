@@ -18,4 +18,9 @@ describe HslConverter do
       expect(HslConverter.matches?("#ffffff")).to be_false
     end
   end
+  
+  describe ".rgb" do 
+    it "should convert to rgb" do 
+    end
+  end
 end
