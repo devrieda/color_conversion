@@ -1,8 +1,11 @@
 module ColorConversion
   class CmykConverter < ColorConverter
 
-    def self.matches?(args)
-      false
+    def self.matches?(color)
+      return false unless color.kind_of?(Hash)
+
+      color.include?(:c) && color.include?(:m) && 
+      color.include?(:y) && color.include?(:k)
     end
 
     private
