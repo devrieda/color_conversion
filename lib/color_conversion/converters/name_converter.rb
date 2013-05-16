@@ -1,8 +1,10 @@
 module ColorConversion
   class NameConverter < ColorConverter
 
-    def self.matches?(args)
-      false
+    def self.matches?(color)
+      return false unless color.kind_of?(String)
+
+      color_names.include?(color.to_s.downcase.to_sym)
     end
 
     private
@@ -11,7 +13,7 @@ module ColorConversion
       {}
     end
     
-    def color_names
+    def self.color_names
       {aliceblue:  [240,248,255],
        antiquewhite: [250,235,215],
        aqua: [0,255,255],
