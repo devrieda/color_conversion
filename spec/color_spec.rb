@@ -73,9 +73,5 @@ describe Color do
     it "should initialize color by cmyk" do 
       color = Color.new(c: 87, m: 69, y: 13, k: 1)
     end
-
-    it "should initialize color by lab" do 
-      color = Color.new(l: 44, a: 11, b: -59)
-    end
   end
 end

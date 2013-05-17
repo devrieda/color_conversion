@@ -11,7 +11,6 @@ require 'color_conversion/converters/name_converter'
 require 'color_conversion/converters/cmyk_converter'
 require 'color_conversion/converters/hsl_converter'
 require 'color_conversion/converters/hsv_converter'
-require 'color_conversion/converters/lab_converter'
 require 'color_conversion/converters/rgb_converter'
 require 'color_conversion/converters/null_converter'
 
