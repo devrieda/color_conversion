@@ -31,5 +31,11 @@ describe RgbConverter do
       rgba = {r: 51, g: 102, b: 204, a: 0.5}
       expect(conv.rgba).to eq rgba
     end
+
+    it "should convert rgba strings to rgba" do 
+      conv = RgbConverter.new(r: "51", g: "102", b: "204", a: "0.5")
+      rgba = {r: 51, g: 102, b: 204, a: 0.5}
+      expect(conv.rgba).to eq rgba
+    end
   end
 end

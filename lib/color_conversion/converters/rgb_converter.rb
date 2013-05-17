@@ -10,7 +10,12 @@ module ColorConversion
     private
     
     def to_rgba(rgb)
-      rgb.merge(:a => rgb[:a] || 1.0)
+      r = rgb[:r].to_f
+      g = rgb[:g].to_f
+      b = rgb[:b].to_f
+      a = (rgb[:a] || 1.0).to_f
+
+      {r: r, g: g, b: b, a: a}
     end
   end
 end
