@@ -19,11 +19,17 @@ describe HslConverter do
     end
   end
   
-  describe ".rgb" do 
-    it "should convert to rgb" do 
-      color = HslConverter.new(h: 225, s: 73, l: 57)
-      rgb   = {r: 65, g: 105, b: 225}
-      expect(color.rgb).to eq rgb
+  describe ".rgba" do 
+    it "should convert hsl to rgba" do 
+      conv = HslConverter.new(h: 225, s: 73, l: 57)
+      rgba = {r: 65, g: 105, b: 225, a: 1.0}
+      expect(conv.rgba).to eq rgba
+    end
+
+    it "should convert hsla to rgba" do 
+      conv = HslConverter.new(h: 225, s: 73, l: 57, a: 0.5)
+      rgba = {r: 65, g: 105, b: 225, a: 0.5}
+      expect(conv.rgba).to eq rgba
     end
   end
 end

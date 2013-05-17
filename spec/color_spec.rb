@@ -67,7 +67,7 @@ describe Color do
     end
 
     it "should initialize color by hsb" do 
-      color = Color.new(h: 220, s: 75, v: 80)
+      color = Color.new(h: 220, s: 75, b: 80)
     end
 
     it "should initialize color by cmyk" do 

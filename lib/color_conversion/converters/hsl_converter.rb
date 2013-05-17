@@ -9,10 +9,11 @@ module ColorConversion
 
     private
     
-    def to_rgb(hsl)
+    def to_rgba(hsl)
       h = hsl[:h] / 360.0
       s = hsl[:s] / 100.0
       l = hsl[:l] / 100.0
+      a = hsl[:a] || 1.0
 
       if s == 0
         val = l * 255
@@ -46,7 +47,7 @@ module ColorConversion
         rgb[i] = (val * 255).round
       end
       
-      {r: rgb[0], g: rgb[1], b: rgb[2]}
+      {r: rgb[0], g: rgb[1], b: rgb[2], a: a}
     end
   end
 end

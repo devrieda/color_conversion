@@ -9,12 +9,13 @@ module ColorConversion
 
     private
 
-    def to_rgb(hex)
+    def to_rgba(hex)
       hex = normalize_hex(hex)
 
       {:r => hex[0,2].hex,
        :g => hex[2,2].hex,
-       :b => hex[4,2].hex}
+       :b => hex[4,2].hex, 
+       :a => 1.0}
     end
 
     def normalize_hex(hex)

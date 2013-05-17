@@ -9,7 +9,7 @@ module ColorConversion
 
     private
     
-    def to_rgb(hsv)
+    def to_rgba(hsv)
       {}
     end
   end

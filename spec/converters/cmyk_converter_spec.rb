@@ -15,11 +15,11 @@ describe CmykConverter do
     end
   end
   
-  describe ".rgb" do 
-    it "should convert to rgb" do 
-      color = CmykConverter.new(c: 74, m: 58, y: 22, k: 3)
-      rgb   = {r: 64, g: 104, b: 193}
-      expect(color.rgb).to eq rgb
+  describe ".rgba" do 
+    it "should convert to rgba" do 
+      conv = CmykConverter.new(c: 74, m: 58, y: 22, k: 3)
+      rgba = {r: 64, g: 104, b: 193, a: 1.0}
+      expect(conv.rgba).to eq rgba
     end
   end
 end

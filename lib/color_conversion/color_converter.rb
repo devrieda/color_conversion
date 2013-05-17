@@ -1,6 +1,6 @@
 module ColorConversion
   class ColorConverter
-    attr_reader :rgb
+    attr_reader :rgba
 
     # keep track of subclasses for factory
     class << self
@@ -21,7 +21,7 @@ module ColorConversion
     end
     
     def initialize(color)
-      @rgb = to_rgb(color)
+      @rgba = to_rgba(color)
     end
   end
 end

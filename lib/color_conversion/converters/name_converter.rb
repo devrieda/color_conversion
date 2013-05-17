@@ -4,13 +4,14 @@ module ColorConversion
     def self.matches?(color)
       return false unless color.kind_of?(String)
 
-      color_names.include?(color.to_s.downcase.to_sym)
+      color_names.include?(color.downcase.to_sym)
     end
 
     private
     
-    def to_rgb(name)
-      {}
+    def to_rgba(name)
+      rgb = self.class.color_names[name.downcase.to_sym]
+      {r: rgb[0], g: rgb[1], b: rgb[2], a: 1.0}
     end
     
     def self.color_names

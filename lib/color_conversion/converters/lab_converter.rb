@@ -9,7 +9,7 @@ module ColorConversion
 
     private
     
-    def to_rgb(lab)
+    def to_rgba(lab)
       {}
     end
   end

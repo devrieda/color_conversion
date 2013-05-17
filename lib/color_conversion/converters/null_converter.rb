@@ -7,7 +7,7 @@ module ColorConversion
 
     private
     
-    def to_rgb(string)
+    def to_rgba(string)
       {}
     end
   end

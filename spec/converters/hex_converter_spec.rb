@@ -23,11 +23,11 @@ describe HexConverter do
     end
   end
 
-  describe ".rgb" do 
-    it "should convert to rgb" do 
-      color = HexConverter.new("#3366cc")
-      rgb   = {r: 51, g: 102, b: 204}
-      expect(color.rgb).to eq rgb
+  describe ".rgba" do 
+    it "should convert to rgba" do 
+      conv = HexConverter.new("#3366cc")
+      rgba = {r: 51, g: 102, b: 204, a: 1.0}
+      expect(conv.rgba).to eq rgba
     end
   end
 end

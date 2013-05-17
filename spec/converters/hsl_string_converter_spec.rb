@@ -15,8 +15,8 @@ describe HslStringConverter do
     end
   end
   
-  describe ".rgb" do 
-    it "should convert to rgb" do 
+  describe ".rgba" do 
+    it "should convert to rgba" do 
     end
   end
 end

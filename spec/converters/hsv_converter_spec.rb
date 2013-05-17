@@ -15,8 +15,11 @@ describe HsvConverter do
     end
   end
   
-  describe ".rgb" do 
-    it "should convert to rgb" do 
+  describe ".rgba" do 
+    it "should convert to rgba" do 
+      conv = HsvConverter.new(h: 220, s: 75, v: 80)
+      rgba = {r: 51, g: 102, b: 204, a: 1.0}
+      expect(conv.rgba).to eq rgba
     end
   end
 end
