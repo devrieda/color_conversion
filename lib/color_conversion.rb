@@ -1,3 +1,5 @@
+require 'forwardable'
+
 require 'color_conversion/version'
 require 'color_conversion/errors'
 require 'color_conversion/color'

@@ -23,5 +23,27 @@ module ColorConversion
     def initialize(color)
       @rgba = to_rgba(color)
     end
+    
+    def rgb
+      {r: @rgba[:r], g: @rgba[:g], b: @rgba[:b]}
+    end
+    
+    def hex
+    end
+    
+    def hsl
+    end
+    
+    def hsv
+    end
+    alias_method :hsb, :hsv
+    
+    def cmyk
+    end
+
+    def alpha
+      @rgba[:a]
+    end
+
   end
 end

@@ -1,25 +1,10 @@
 module ColorConversion
   class Color
-    attr_reader :rgb, :alpha
-    
-    def initialize(color)
-      rgba   = ColorConverter.factory(color).rgba
-      @alpha = rgba.delete(:a)
-      @rgb   = rgba
-    end
+    extend Forwardable
+    def_delegators :@converter, :rgb, :hex, :hsl, :hsv, :hsb, :cymk, :alpha
 
-    # conversions
-    
-    def cymk
-    end
-    
-    def lab
-    end
-    
-    def hsl
-    end
-    
-    def hsv
+    def initialize(color)
+      @converter = ColorConverter.factory(color)
     end
   end
 end
