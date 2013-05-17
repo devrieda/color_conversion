@@ -16,7 +16,16 @@ describe HslStringConverter do
   end
   
   describe ".rgba" do 
-    it "should convert to rgba" do 
+    it "should convert hsl to rgba" do 
+      conv = HslStringConverter.new("hsl(225, 73%, 57%)")
+      rgba = {r: 65, g: 105, b: 225, a: 1.0}
+      expect(conv.rgba).to eq rgba
+    end
+
+    it "should convert hsla to rgba" do 
+      conv = HslStringConverter.new("hsla(225, 73%, 57%, 0.5)")
+      rgba = {r: 65, g: 105, b: 225, a: 0.5}
+      expect(conv.rgba).to eq rgba
     end
   end
 end

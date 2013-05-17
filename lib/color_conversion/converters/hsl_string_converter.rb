@@ -9,8 +9,16 @@ module ColorConversion
 
     private
     
-    def to_rgba(hsv)
-      {}
+    def to_rgba(hsl)
+      matches = hsl.match(/hsla?\(([0-9\.,%\s]+)\)/)
+      raise InvalidColorError unless matches
+
+      h, s, l, a = matches[1].split(",").map do |color| 
+        color.gsub("%", "").strip
+      end
+      raise InvalidColorError unless h && s && l
+
+      HslConverter.new(h: h, s: s, l: l, a: a).rgba
     end
   end
 end
