@@ -21,6 +21,9 @@ describe HslConverter do
   
   describe ".rgb" do 
     it "should convert to rgb" do 
+      color = HslConverter.new(h: 225, s: 73, l: 57)
+      rgb   = {r: 65, g: 105, b: 225}
+      expect(color.rgb).to eq rgb
     end
   end
 end
