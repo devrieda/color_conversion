@@ -10,10 +10,10 @@ module ColorConversion
     private
     
     def to_rgba(hsl)
-      h = hsl[:h] / 360.0
-      s = hsl[:s] / 100.0
-      l = hsl[:l] / 100.0
-      a = hsl[:a] || 1.0
+      h = hsl[:h].to_s.gsub(/[^0-9\.]/, "").to_f / 360.0
+      s = hsl[:s].to_s.gsub(/[^0-9\.]/, "").to_f / 100.0
+      l = hsl[:l].to_s.gsub(/[^0-9\.]/, "").to_f / 100.0
+      a = hsl[:a] ? hsl[:a].to_s.gsub(/[^0-9\.]/, "").to_f : 1.0
 
       if s == 0
         val = l * 255
