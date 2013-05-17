@@ -10,7 +10,7 @@ module ColorConversion
     private
     
     def to_rgba(rgb)
-      {}
+      rgb.merge(:a => rgb[:a] || 1.0)
     end
   end
 end

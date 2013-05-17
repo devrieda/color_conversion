@@ -18,6 +18,9 @@ describe NameConverter do
   
   describe ".rgb" do 
     it "should convert to rgb" do 
+      conv = NameConverter.new("blue")
+      rgba = {r: 0, g: 0, b: 255, a: 1.0}
+      expect(conv.rgba).to eq rgba
     end
   end
 end

@@ -20,7 +20,16 @@ describe RgbConverter do
   end
   
   describe ".rgb" do 
-    it "should convert to rgb" do 
+    it "should convert rgb to rgba" do 
+      conv = RgbConverter.new(r: 51, g: 102, b: 204)
+      rgba = {r: 51, g: 102, b: 204, a: 1.0}
+      expect(conv.rgba).to eq rgba
+    end
+
+    it "should convert rgba to rgba" do 
+      conv = RgbConverter.new(r: 51, g: 102, b: 204, a: 0.5)
+      rgba = {r: 51, g: 102, b: 204, a: 0.5}
+      expect(conv.rgba).to eq rgba
     end
   end
 end
