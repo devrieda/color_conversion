@@ -8,8 +8,12 @@ describe NullConverter do
     end
   end
   
-  describe ".rgb" do 
+  describe ".rgba" do 
     it "should throw an error" do 
+      expect {
+        conv = NullConverter.new("asdf")
+        conv.rgba 
+      }.to raise_error(InvalidColorError)
     end
   end
 end

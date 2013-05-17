@@ -7,8 +7,8 @@ module ColorConversion
 
     private
     
-    def to_rgba(string)
-      {}
+    def to_rgba(color)
+      raise InvalidColorError
     end
   end
 end
