@@ -15,16 +15,14 @@ module ColorConversion
       l = hsl[:l].to_s.gsub(/[^0-9\.]/, "").to_f / 100.0
       a = hsl[:a] ? hsl[:a].to_s.gsub(/[^0-9\.]/, "").to_f : 1.0
 
-      if s == 0
-        val = l * 255
-        return [val, val, val]
+      return [l * 255, l * 255, l * 255] if s == 0
+
+      t2 = if l < 0.5
+        l * (1 + s)
+      else
+        l + s - l * s
       end
 
-      if l < 0.5
-        t2 = l * (1 + s)
-      else
-        t2 = l + s - l * s
-      end
       t1 = 2 * l - t2
 
       rgb = [0, 0, 0]
