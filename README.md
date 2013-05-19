@@ -57,7 +57,7 @@ Color.new("#FFFFFF").name
 To install ColorConversion, add the gem to your Gemfile: 
 
 ```ruby
-gem "color_conversion", "~> 0.1.0"
+gem "color_conversion"
 ```
 
 ## LICENSE
