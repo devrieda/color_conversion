@@ -45,8 +45,8 @@ describe ColorConverter do
     end
   end
 
-  describe ".cymk" do 
-    it "converts color to cymk" do 
+  describe ".cmyk" do 
+    it "converts color to cmyk" do 
       conv = RgbConverter.new(r: 64, g: 104, b: 193)
 
       cmyk = {c: 67, m: 46, y: 0, k: 24}
