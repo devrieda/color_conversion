@@ -4,51 +4,64 @@ This gem provides conversions for colors to and from Hex, RGB, and HSL.
 
 ## Examples
 
-Create a new color:
+Initialize a color:
 ```ruby
 # from hex
-color = Color.new("#FFFFFF")
-color = Color.new("#FFF")
+color = Color.new("#3366cc")
+color = Color.new("#36c")
 
-# from rgb and rgba
-color = Color.new(r: 255, g: 255, b: 255)
-color = Color.new(r: 255, g: 255, b: 255, a: 0.5)
+# from rgb(a)
+color = Color.new(r: 51, g: 102, b: 204)
+color = Color.new(r: 51, g: 102, b: 204, a: 0.5)
 
-# from hsl and hsla
-color = Color.new(h: 0, s: 100, l: 100)
-color = Color.new(h: 0, s: 100, l: 100, a: 0.5)
+# from hsl(a)
+color = Color.new(h: 225, s: 73, l: 57)
+color = Color.new(h: 225, s: 73, l: 57, a: 0.5)
+
+# from hsv/hsb
+color = Color.new(h: 220, s: 75, v: 80)
+color = Color.new(h: 220, s: 75, b: 80)
+
+# from cmyk
+color = Color.new(c: 74, m: 58, y: 22, k: 3)
 
 # from textual color
-color = Color.new("white")
+color = Color.new("blue")
 
-# from a css declaration
-color = Color.new("rgb(255,255,255)")
-color = Color.new("hsl(0,100%,100%)")
+# from a css rgb(a) string
+color = Color.new("rgb(51, 102, 204)")
+color = Color.new("rgba(51, 102, 204, 0.5)")
+
+# from a css hsl(a) string
+color = Color.new("hsl(225, 73%, 57%)")
+color = Color.new("hsl(225, 73%, 57%, 0.5)")
 ```
 
+Conversions
 
-Convert to RGB
 ```ruby
-Color.new("white").rgb
-=> {:r=>255, :g=>255, :b=>255}
-```
+color = Color.new(r: 51, g: 102, b: 204, a: 0.5)
 
-Convert to Hex
-```ruby
-Color.new("white").hex
-=> "#FFFFFF"
-```
+color.alpha
+=> 0.5
 
-Convert to HSL
-```ruby
-Color.new("white").hsl
-=> {:h=>0, :s=>100, :l=>100}
-```
+color.rgb
+=> {:r=>51, :g=>102, :b=>204}
 
-Convert to Name
-```ruby
-Color.new("#FFFFFF").name
-=> "white"
+color.hsl
+=> {:h=>220, :s=>60, :l=>50}
+
+color.hsv
+=> {:h=>220, :s=>75, :v=>80}
+
+color.hsb
+=> {:h=>220, :s=>75, :b=>80}
+
+color.cmyk
+=> {:c=>75, :m=>50, :y=>0, :k=>20}
+
+color.hex
+=> "#3366cc"
 ```
 
 
