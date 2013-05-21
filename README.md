@@ -40,28 +40,31 @@ color = Color.new("hsl(225, 73%, 57%, 0.5)")
 Conversions
 
 ```ruby
-color = Color.new(r: 51, g: 102, b: 204, a: 0.5)
+color = Color.new(r: 70, g: 130, b: 180, a: 0.5)
 
 color.alpha
 => 0.5
 
 color.rgb
-=> {:r=>51, :g=>102, :b=>204}
+=> {:r=>70, :g=>130, :b=>180}
 
 color.hsl
-=> {:h=>220, :s=>60, :l=>50}
+=> {:h=>207, :s=>44, :l=>49}
 
 color.hsv
-=> {:h=>220, :s=>75, :v=>80}
+=> {:h=>207, :s=>61, :v=>71}
 
 color.hsb
-=> {:h=>220, :s=>75, :b=>80}
+=> {:h=>207, :s=>61, :b=>71}
 
 color.cmyk
-=> {:c=>75, :m=>50, :y=>0, :k=>20}
+=> {:c=>61, :m=>28, :y=>0, :k=>29}
 
 color.hex
-=> "#3366cc"
+=> "#4682b4"
+
+color.name
+=> "steelblue"
 ```
 
 
