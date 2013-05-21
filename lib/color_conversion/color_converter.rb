@@ -119,6 +119,10 @@ module ColorConversion
     def alpha
       @rgba[:a]
     end
+    
+    def name
+      NameConverter.name_for_rgb(rgb)
+    end
 
   end
 end

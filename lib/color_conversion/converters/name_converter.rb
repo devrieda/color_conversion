@@ -6,6 +6,11 @@ module ColorConversion
 
       color_names.include?(color.downcase.to_sym)
     end
+    
+    def self.name_for_rgb(rgb)
+      name = color_names.find {|k,v| v == [rgb[:r], rgb[:g], rgb[:b]] }
+      name[0].to_s if name
+    end
 
     private
     
@@ -13,7 +18,7 @@ module ColorConversion
       rgb = self.class.color_names[name.downcase.to_sym]
       {r: rgb[0], g: rgb[1], b: rgb[2], a: 1.0}
     end
-    
+
     def self.color_names
       {aliceblue:  [240,248,255],
        antiquewhite: [250,235,215],

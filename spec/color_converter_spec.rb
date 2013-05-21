@@ -54,6 +54,18 @@ describe ColorConverter do
     end
   end
   
+  describe ".name" do 
+    it "converts color to name" do 
+      conv = RgbConverter.new(r: 255, g: 0, b: 0)
+      expect(conv.name).to eq "red"
+    end
+    
+    it "returns nil if no name found" do 
+      conv = RgbConverter.new(r: 255, g: 0, b: 1)
+      expect(conv.name).to be_nil
+    end
+  end
+  
   describe ".alpha" do 
     it "finds alpha for color" do 
       conv = RgbConverter.new(r: 51, g: 102, b: 204, a: 0.5)
