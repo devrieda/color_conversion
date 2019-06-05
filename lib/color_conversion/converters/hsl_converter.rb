@@ -15,7 +15,7 @@ module ColorConversion
       l = hsl[:l].to_s.gsub(/[^0-9\.]/, "").to_f / 100.0
       a = hsl[:a] ? hsl[:a].to_s.gsub(/[^0-9\.]/, "").to_f : 1.0
 
-      return [l * 255, l * 255, l * 255] if s == 0
+      return greyscale(l, a) if s == 0
 
       t2 = if l < 0.5
         l * (1 + s)
@@ -47,5 +47,11 @@ module ColorConversion
       
       {r: rgb[0], g: rgb[1], b: rgb[2], a: a}
     end
+
+    def greyscale(luminosity, alpha)
+      rgb_equal_value = (luminosity * 255).round
+      { r: rgb_equal_value, g: rgb_equal_value, b: rgb_equal_value, a: alpha }
+    end
+
   end
 end

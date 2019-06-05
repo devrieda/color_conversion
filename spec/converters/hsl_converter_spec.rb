@@ -37,5 +37,11 @@ describe HslConverter do
       rgba = {r: 65, g: 105, b: 225, a: 0.5}
       expect(conv.rgba).to eq rgba
     end
+
+    it 'should return equal values when saturation is 0' do
+      conv = HslConverter.new(h: "225", s: "0%", l: "20%", a: "0.5")
+      rgba = {r: 51, g: 51, b: 51, a: 0.5}
+      expect(conv.rgba).to eq rgba
+    end
   end
 end
