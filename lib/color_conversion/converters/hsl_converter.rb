@@ -50,7 +50,7 @@ module ColorConversion
 
     def greyscale(luminocity, alpha)
       rgb_equal_value = (luminocity * 255).round
-      { r: rgb_equal_value, g: rgb_equal_value, b: rgb_equal_value, a: a }
+      { r: rgb_equal_value, g: rgb_equal_value, b: rgb_equal_value, a: alpha }
     end
 
   end
